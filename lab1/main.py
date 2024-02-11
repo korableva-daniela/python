@@ -1,5 +1,5 @@
 #Найти сумму непростых делителей числа.
-x=int(input())
+#x=int(input("Введите число: "))
 def f_1(x):
     sum=0
     for i in range(1,x):
@@ -12,9 +12,9 @@ def f_1(x):
                 sum=sum+i
     return sum
 
-print(f_1(x))
+#print(f_1(x))
 #Найти количество цифр числа, меньших 3
-x=int(input())
+#x=int(input("Введите число: "))
 def f_2(x):
     k=0
     while x>1:
@@ -22,11 +22,11 @@ def f_2(x):
             k+=1
         x=x/10
     return k
-print(f_2(x))
+#print(f_2(x))
 #Найти количество чисел, не являющихся делителями
 #исходного числа, не взамнопростых с ним и взаимно простых с суммой
 #простых цифр этого числа.
-x=int(input())
+#x=int(input("Введите число: "))
 def f_31(x):
     k=0
     s = 0
@@ -64,5 +64,38 @@ def f_31(x):
 
 
     return k
-
 #print(f_31(x))
+
+import random
+#Дана строка в которой содержатся цифры и буквы. Необходимо
+#расположить все цифры в начале строки, а буквы – в конце.
+#s= str(input("Введите строку: "))
+def func_s_3(s):
+ length =len(s)
+
+ i=0
+ while i<length:
+  s_int = ''
+  s_str = ''
+  while i<length:
+     if ('0'<=s[i]<='9'):
+      s_int +=s[i]
+     else: s_str +=s[i]
+     i+=1
+  i+=1
+  str1=s_int+s_str
+
+ return str1
+
+#print(func_s_3(s))
+
+#Дана строка в которой записаны слова через пробел. Необходимо
+#перемешать все слова в случайном порядке (спонсор задачи Мастер Йода).
+#s= str(input("Введите строку: "))
+def func_s_4(s):
+ words = s.split(" ")
+ random.shuffle(words)
+ words1 = ''.join(words)
+ return (words1)
+
+#rint(func_s_4(s))
